@@ -6,13 +6,14 @@ import sys
 def traversingFolder(path, crack_file):
     files = os.listdir(path)
     for file in files:
+        file = os.path.join(path, file)
         if os.path.isdir(file):
             if not os.listdir(file):
                 return
             else:
-                traversingFolder(path + "/" + file, crack_file)
+                traversingFolder(file, crack_file)
         else:
-            doCheck(path + "/" + file, crack_file)
+            doCheck(file, crack_file)
 
 
 def doCheck(filepath, crack_file):
