@@ -9,7 +9,7 @@ def traversingFolder(path, crack_file):
         file = os.path.join(path, file)
         if os.path.isdir(file):
             if not os.listdir(file):
-                return
+                continue
             else:
                 traversingFolder(file, crack_file)
         else:
